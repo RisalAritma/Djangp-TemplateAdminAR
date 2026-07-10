@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/alert.css' %}">
 
 </head>
 
@@ -40,11 +41,27 @@
         </div>
 
         <ul class="menu">
+            
+            <a href="{% url 'app:dashboard' %}" class="text-decoration-none text-reset">
+                <li class="{% if request.path == '/app/dashboard/' %}active{% endif %}">
+                    <i class="bi bi-grid"></i>
+                    Dashboard
+                </li>
+            </a>
 
-            <li class="active">
-                <i class="bi bi-grid"></i>
-                Dashboard
-            </li>
+            <a href="{% url 'app:alert' %}" class="text-decoration-none text-reset">
+                <li class="{% if request.path == '/app/alert/' %}active{% endif %}">
+                    <i class="bi bi-bell"></i>
+                    Alert
+                </li>
+            </a>
+
+            <a href="{% url 'app:button' %}" class="text-decoration-none text-reset">
+                <li class="{% if request.path == '/app/button/' %}active{% endif %}">
+                    <i class="bi bi-ui-radios"></i>
+                    Button
+                </li>
+            </a>
 
             <li>
                 <i class="bi bi-speedometer2"></i>

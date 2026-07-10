@@ -1,0 +1,344 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <!-- Button Sizes Section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h6 class="mb-0">Ukuran Button</h6>
+                </div>
+                <div class="card-body pt-4">
+                    <div class="d-flex gap-3 flex-wrap align-items-center">
+                        <button class="btn btn-sm btn-primary">Small Button</button>
+                        <button class="btn btn-primary">Normal Button</button>
+                        <button class="btn btn-lg btn-primary">Large Button</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button Colors Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h6 class="mb-0">Warna Button (Solid)</h6>
+                </div>
+                <div class="card-body pt-4">
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button class="btn btn-primary">Primary</button>
+                        <button class="btn btn-secondary">Secondary</button>
+                        <button class="btn btn-success">Success</button>
+                        <button class="btn btn-danger">Danger</button>
+                        <button class="btn btn-warning">Warning</button>
+                        <button class="btn btn-info">Info</button>
+                        <button class="btn btn-light">Light</button>
+                        <button class="btn btn-dark">Dark</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button Outline Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h6 class="mb-0">Button Outline</h6>
+                </div>
+                <div class="card-body pt-4">
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button class="btn btn-outline-primary">Primary</button>
+                        <button class="btn btn-outline-secondary">Secondary</button>
+                        <button class="btn btn-outline-success">Success</button>
+                        <button class="btn btn-outline-danger">Danger</button>
+                        <button class="btn btn-outline-warning">Warning</button>
+                        <button class="btn btn-outline-info">Info</button>
+                        <button class="btn btn-outline-dark">Dark</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button with Bootstrap Icons Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h6 class="mb-0">Button dengan Icon</h6>
+                </div>
+                <div class="card-body pt-4">
+                    <div class="d-flex gap-2 flex-wrap">
+
+                        <button class="btn btn-primary">
+                            <i class="bi bi-floppy me-2"></i>Save
+                        </button>
+
+                        <button class="btn btn-danger">
+                            <i class="bi bi-trash me-2"></i>Delete
+                        </button>
+
+                        <button class="btn btn-info">
+                            <i class="bi bi-pencil-square me-2"></i>Edit
+                        </button>
+
+                        <button class="btn btn-success">
+                            <i class="bi bi-check-circle me-2"></i>Confirm
+                        </button>
+
+                        <button class="btn btn-warning">
+                            <i class="bi bi-exclamation-triangle me-2"></i>Warning
+                        </button>
+
+                        <button class="btn btn-secondary">
+                            <i class="bi bi-arrow-left me-2"></i>Back
+                        </button>
+
+                        <button class="btn btn-primary">
+                            <i class="bi bi-download me-2"></i>Download
+                        </button>
+
+                        <button class="btn btn-success">
+                            <i class="bi bi-upload me-2"></i>Upload
+                        </button>
+
+                        <button class="btn btn-info">
+                            <i class="bi bi-search me-2"></i>Search
+                        </button>
+
+                        <button class="btn btn-primary">
+                            <i class="bi bi-plus-circle me-2"></i>Add
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button States Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h6 class="mb-0">State Button</h6>
+                </div>
+                <div class="card-body pt-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="mb-3">Normal Button</h6>
+                            <button class="btn btn-primary">Normal</button>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="mb-3">Disabled Button</h6>
+                            <button class="btn btn-primary" disabled>Disabled</button>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <h6 class="mb-3">Loading Button</h6>
+                            <button class="btn btn-primary" id="loadingBtn" onclick="toggleLoadingState(this)">
+                                <span class="button-text">Click untuk Loading</span>
+                                <span class="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true" style="display: none;"></span>
+                            </button>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <h6 class="mb-3">Active Button</h6>
+                            <button class="btn btn-primary active">Active</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button Group Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h6 class="mb-0">Button Group</h6>
+                </div>
+                <div class="card-body pt-4">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6 class="mb-3">Basic Button Group</h6>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-outline-primary">Left</button>
+                                <button type="button" class="btn btn-outline-primary">Middle</button>
+                                <button type="button" class="btn btn-outline-primary">Right</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="mb-3">Colored Button Group</h6>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary">Save</button>
+                                <button type="button" class="btn btn-warning">Draft</button>
+                                <button type="button" class="btn btn-secondary">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="mb-3">Icon Button Group</h6>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-outline-secondary"><i class="fas fa-align-left"></i></button>
+                                <button type="button" class="btn btn-outline-secondary"><i class="fas fa-align-center"></i></button>
+                                <button type="button" class="btn btn-outline-secondary"><i class="fas fa-align-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="mb-3">Toggle Button Group</h6>
+                            <div class="btn-group" role="group">
+                                <input type="radio" class="btn-check" name="options" id="option1" checked>
+                                <label class="btn btn-outline-primary" for="option1">Active</label>
+                                <input type="radio" class="btn-check" name="options" id="option2">
+                                <label class="btn btn-outline-primary" for="option2">Option</label>
+                                <input type="radio" class="btn-check" name="options" id="option3">
+                                <label class="btn btn-outline-primary" for="option3">Disabled</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Width Button Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h6 class="mb-0">Full Width Button</h6>
+                </div>
+                <div class="card-body pt-4">
+                    <button class="btn btn-primary w-100 mb-2">Full Width Button</button>
+                    <button class="btn btn-success w-100 mb-2">Submit Form</button>
+                    <button class="btn btn-danger w-100">Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button with Badge Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h6 class="mb-0">Button dengan Badge</h6>
+                </div>
+                <div class="card-body pt-4">
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button class="btn btn-primary">
+                            Notifications
+                            <span class="badge bg-danger ms-2">5</span>
+                        </button>
+                        <button class="btn btn-info">
+                            Messages
+                            <span class="badge bg-warning ms-2">12</span>
+                        </button>
+                        <button class="btn btn-success">
+                            Tasks
+                            <span class="badge bg-info ms-2">3</span>
+                        </button>
+                        <button class="btn btn-warning">
+                            Alerts
+                            <span class="badge bg-danger ms-2">NEW</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Button Rounded Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h6 class="mb-0">Button Rounded</h6>
+                </div>
+                <div class="card-body pt-4">
+                    <div class="d-flex gap-2 flex-wrap align-items-center">
+                        <button class="btn btn-primary rounded-0">Sharp</button>
+                        <button class="btn btn-primary rounded-1">Slightly Rounded</button>
+                        <button class="btn btn-primary rounded-2">Rounded</button>
+                        <button class="btn btn-primary rounded-3">More Rounded</button>
+                        <button class="btn btn-primary rounded-pill">Pill Button</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Button Examples Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <h6 class="mb-0">Contoh Action Button</h6>
+                </div>
+                <div class="card-body pt-4">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6 class="mb-3">CRUD Actions</h6>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-success"><i class="fas fa-plus me-1"></i>Create</button>
+                                <button class="btn btn-sm btn-info"><i class="fas fa-eye me-1"></i>Read</button>
+                                <button class="btn btn-sm btn-warning"><i class="fas fa-edit me-1"></i>Update</button>
+                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash me-1"></i>Delete</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="mb-3">Form Actions</h6>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-primary"><i class="fas fa-save me-1"></i>Save</button>
+                                <button class="btn btn-secondary"><i class="fas fa-redo me-1"></i>Reset</button>
+                                <button class="btn btn-outline-secondary"><i class="fas fa-times me-1"></i>Cancel</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="mb-3">Navigation Actions</h6>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary"><i class="fas fa-arrow-left me-1"></i>Back</button>
+                                <button class="btn btn-outline-primary"><i class="fas fa-arrow-right me-1"></i>Next</button>
+                                <button class="btn btn-outline-primary"><i class="fas fa-home me-1"></i>Home</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="mb-3">Status Actions</h6>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-success btn-sm"><i class="fas fa-check me-1"></i>Approve</button>
+                                <button class="btn btn-danger btn-sm"><i class="fas fa-times me-1"></i>Reject</button>
+                                <button class="btn btn-warning btn-sm"><i class="fas fa-clock me-1"></i>Pending</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggleLoadingState(button) {
+        const spinner = button.querySelector('.spinner-border');
+        const text = button.querySelector('.button-text');
+        
+        button.disabled = true;
+        spinner.style.display = 'inline-block';
+        text.style.display = 'none';
+        
+        setTimeout(() => {
+            button.disabled = false;
+            spinner.style.display = 'none';
+            text.style.display = 'inline';
+        }, 2000);
+    }
+</script>
+
+{% endblock %}
