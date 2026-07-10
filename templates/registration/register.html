@@ -1,0 +1,24 @@
+{% extends "registration/base.html" %}
+
+{% block content1 %}
+
+<div class="form-side">
+    <div class="login-box">
+        <h2>Selamat Datang</h2>
+        <p><strong>Maaf</strong>, pendaftaran akun hanya bisa dilakukan oleh administrator. Silakan hubungi administrator untuk informasi lebih lanjut.</p>
+        <a href="https://wa.me/6281234567890" target="_blank">
+            
+            <button type="submit" class="btn-masuk"><i class="ri-contacts-line"></i> Hubungi Administrator</button>
+        </a>
+        <br>
+        <br>
+        <p class="register-link">Sudah punya akun? <a href="{% url 'login' %}">Login di sini</a></p>
+
+
+        <div class="copyright">
+            © 2026 Universitas Negeri Makassar. All rights reserved.
+        </div>
+    </div>
+</div>
+
+{% endblock content1 %}

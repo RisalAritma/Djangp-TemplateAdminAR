@@ -1,0 +1,603 @@
+/* =====================================================
+   MODERN DASHBOARD
+   Author : AdminAR
+===================================================== */
+
+:root{
+
+    --primary:#dc2626;
+    --primary-light:#fee2e2;
+
+    --background:#f5f7fb;
+
+    --white:#ffffff;
+
+    --text:#1f2937;
+
+    --text-light:#6b7280;
+
+    --border:#ececec;
+
+    --shadow:0 8px 30px rgba(0,0,0,.06);
+
+    --shadow-hover:0 15px 40px rgba(0,0,0,.10);
+
+    --radius:18px;
+
+    --transition:.3s;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+
+/* ===================================
+Wrapper
+=================================== */
+
+.wrapper{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+
+/* ===================================
+Sidebar
+=================================== */
+
+.sidebar{
+
+    width:270px;
+
+    background:var(--white);
+
+    position:fixed;
+
+    top:15px;
+
+    left:15px;
+
+    bottom:15px;
+
+    border-radius:24px;
+
+    padding:30px 20px;
+
+    box-shadow:var(--shadow);
+
+    /* layout so header and footer stay in place while menu scrolls */
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+
+}
+
+
+/* Logo */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:45px;
+
+}
+
+.logo-icon{
+
+    width:56px;
+
+    height:56px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.logo h4{
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+.logo small{
+
+    color:var(--text-light);
+
+}
+
+.app-title{
+    margin:0;
+    font-weight:800;
+    color:var(--primary);
+    letter-spacing:1px;
+}
+
+.sidebar-footer{
+    /* keep footer at bottom of sidebar regardless of menu scroll */
+    margin-top:auto;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+
+/* ===================================
+Menu
+=================================== */
+
+.menu{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+/* make the menu area scrollable while keeping header/footer fixed */
+.menu{
+    flex:1 1 auto;
+    overflow:auto;
+    -webkit-overflow-scrolling:touch;
+    padding-right:6px; /* avoid scrollbar overlay */
+}
+
+.menu li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:14px 18px;
+
+    margin-bottom:10px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    font-weight:500;
+
+}
+
+.menu li i{
+
+    font-size:20px;
+
+}
+
+.menu li:hover{
+
+    background:#f8f9fa;
+
+}
+
+.menu li.active{
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+}
+
+
+/* ===================================
+Main Content
+=================================== */
+
+.main-content{
+
+    flex:1;
+
+    margin-left:300px;
+
+    padding:35px;
+
+}
+
+
+/* ===================================
+Topbar
+=================================== */
+
+.topbar{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(15px);
+
+    padding:20px 30px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+
+/* ===================================
+Button
+=================================== */
+
+.btn-danger{
+
+    background:var(--primary);
+
+    border:none;
+
+    border-radius:12px;
+
+}
+
+.btn-danger:hover{
+
+    background:#b91c1c;
+
+}
+
+.btn-light{
+
+    border-radius:12px;
+
+}
+
+
+/* ===================================
+Card Statistik
+=================================== */
+
+.stat-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.stat-card small{
+
+    color:var(--text-light);
+
+    font-weight:500;
+
+}
+
+.stat-card h2{
+
+    margin-top:10px;
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+
+/* ===================================
+Icon
+=================================== */
+
+.icon-soft{
+
+    width:62px;
+
+    height:62px;
+
+    border-radius:18px;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:26px;
+
+}
+
+
+/* ===================================
+Card
+=================================== */
+
+.card{
+
+    border:none;
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.card-header{
+
+    border-bottom:1px solid #f1f1f1;
+
+    font-weight:600;
+
+}
+
+
+/* ===================================
+Table
+=================================== */
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table thead{
+
+    background:#fafafa;
+
+}
+
+.table th{
+
+    font-weight:600;
+
+    color:#555;
+
+    border-bottom:2px solid #eee;
+
+}
+
+.table td{
+
+    vertical-align:middle;
+
+}
+
+
+/* ===================================
+Badge
+=================================== */
+
+.badge.bg-danger{
+
+    background:var(--primary)!important;
+
+}
+
+
+/* ===================================
+Scrollbar
+=================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#d5d5d5;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#bdbdbd;
+
+}
+
+
+/* ===================================
+Responsive
+=================================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:85px;
+
+    padding:20px 10px;
+
+}
+
+.logo h4,
+.logo small,
+.menu li span{
+
+    display:none;
+
+}
+
+.logo{
+
+    justify-content:center;
+
+}
+
+.menu li{
+
+    justify-content:center;
+
+}
+
+.main-content{
+
+    margin-left:110px;
+
+}
+
+}
+
+
+
+@media(max-width:768px){
+
+    /* off-canvas sidebar for mobile */
+    .sidebar{
+        position:fixed;
+        top:0;
+        left:0;
+        bottom:0;
+        width:260px;
+        transform:translateX(-115%);
+        transition:transform .28s ease;
+        border-radius:0;
+        padding:20px;
+        z-index:2500;
+        box-shadow:0 20px 50px rgba(0,0,0,.45);
+    }
+
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+    .sidebar .sidebar-close{
+        position:absolute;
+        top:12px;
+        right:12px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        width:36px;
+        height:36px;
+        border-radius:8px;
+    }
+
+    .sidebar-backdrop{
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.45);
+        z-index:2000;
+        display:none;
+        opacity:0;
+        transition:opacity .2s ease;
+    }
+
+    .sidebar-backdrop.active{
+        display:block;
+        opacity:1;
+    }
+
+    .wrapper{
+        flex-direction:column;
+    }
+
+    .main-content{
+        margin-left:0;
+        padding:20px;
+    }
+
+    .topbar{
+        flex-direction:column;
+        gap:20px;
+        align-items:flex-start;
+    }
+
+}
+
+.notif-count{
+    position:absolute;
+    top:0;
+    right:0;
+    transform:translate(30%,-30%);
+    font-size:11px;
+    padding:3px 6px;
+    border-radius:999px;
+}
+
+.profile-img{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #fff;
+}
+
+/* ensure dropdowns appear above other elements and open upward cleanly */
+.dropdown-menu{
+    /* position fixed so dropdown is positioned relative to viewport
+       and won't be clipped by stacking contexts in the page */
+    position:fixed !important;
+    z-index:99999 !important;
+    will-change:transform;
+}
+.dropup .dropdown-menu{
+    margin-bottom:6px;
+}

@@ -1,0 +1,42 @@
+{% extends "registration/base.html" %}
+{% load static %}
+
+{% block content1 %}
+
+<div class="form-side">
+    <div class="login-box">
+        <h2>Selamat Datang</h2>
+        <p>Silakan masuk ke akun Anda</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-field">
+                <label>Username</label>
+                {{ form.username }}
+            </div>
+            <div class="input-field">
+                <label>Password</label>
+                {{ form.password }}
+            </div>
+            <button type="submit" class="btn-masuk">MASUK</button>
+            <br>
+            <br>
+            <p class="register-link">Belum punya akun? <a href="{% url 'register' %}">Daftar di sini</a></p>
+
+            <a href="{% static 'panduan.pdf' %}" class="btn-panduan" target="_blank">
+                <i class="ri-file-download-line"></i>
+                Download Panduan
+            </a>
+
+        </form>
+
+        
+        
+
+        <div class="copyright">
+            © 2026 FT-UNM. All rights reserved.
+        </div>
+    </div>
+</div>
+
+{% endblock content1 %}

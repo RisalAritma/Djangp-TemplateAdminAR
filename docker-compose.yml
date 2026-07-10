@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: adminAR_db
+    restart: unless-stopped
+    command: [
+      "mysqld",
+      "--character-set-server=utf8mb4",
+      "--collation-server=utf8mb4_general_ci"
+    ]
+    environment:
+      MYSQL_DATABASE: djg_adminAR
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    # --- TAMBAHKAN HEALTHCHECK DI BAWAH INI ---
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: adminAR_pma
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=
+      - UPLOAD_LIMIT=300M
+      - MEMORY_LIMIT=512M
+    depends_on:
+      db:
+        condition: service_healthy  # Menunggu db benar-benar sehat/siap
+
+  web:
+    build: .
+    container_name: adminAR_web
+    restart: unless-stopped
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_NAME=djg_adminAR
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=
+      - DATABASE_HOST=db
+      - DATABASE_PORT=3306
+    # --- UBAH DEPENDS_ON DI BAWAH INI ---
+    depends_on:
+      db:
+        condition: service_healthy  # Django hanya akan jalan jika MySQL sudah siap
+
+volumes:
+  mysql_data:

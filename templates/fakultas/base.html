@@ -1,0 +1,266 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div>
+                <h3 class="app-title">DIGITEK</h3>
+            </div>
+            <button class="btn btn-sm btn-light d-lg-none sidebar-close" id="sidebarClose" aria-label="Tutup menu">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+                <i class="bi bi-grid"></i>
+                Dashboard
+            </li>
+
+            <li>
+                <i class="bi bi-speedometer2"></i>
+                Monitoring
+            </li>
+
+            <li>
+                <i class="bi bi-people"></i>
+                User
+            </li>
+
+            <li>
+                <i class="bi bi-folder2-open"></i>
+                Project
+            </li>
+
+            <li>
+                <i class="bi bi-file-earmark-text"></i>
+                Report
+            </li>
+
+            <li>
+                <i class="bi bi-gear"></i>
+                Setting
+            </li>
+           
+
+        </ul>
+
+        <div class="sidebar-footer text-center mt-4">
+            <small class="text-muted">Versi 1.0.0</small>
+        </div>
+
+    </aside>
+
+    <!-- ================= Main ================= -->
+
+    <main class="main-content">
+
+        <!-- ================= Topbar ================= -->
+
+        <nav class="topbar">
+
+            <div>
+
+                <h2 class="fw-bold mb-1">
+
+                    Dashboard
+
+                </h2>
+
+                <small class="text-muted">
+
+                    Selamat datang kembali Administrator
+
+                </small>
+
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <!-- Mobile menu toggle -->
+                <button class="btn btn-light d-lg-none me-2" id="sidebarToggle" aria-label="Buka menu">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <!-- Notifications dropdown -->
+                <div class="dropup dropdown">
+                    <button class="btn btn-light position-relative" id="notifDropdown" data-bs-toggle="dropdown" data-bs-boundary="viewport" aria-expanded="false">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-danger notif-count">3</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end p-2" aria-labelledby="notifDropdown" style="min-width:260px;">
+                        <li class="dropdown-header">Notifikasi</li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Notifikasi 1</a></li>
+                        <li><a class="dropdown-item" href="#">Notifikasi 2</a></li>
+                        <li><a class="dropdown-item" href="#">Notifikasi 3</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-center" href="#">Lihat semua</a></li>
+                    </ul>
+                </div>
+
+                <!-- Profile dropdown -->
+                <div class="dropup dropdown">
+                    <a class="d-flex align-items-center text-decoration-none" href="#" id="profileDropdown" data-bs-toggle="dropdown" data-bs-boundary="viewport" aria-expanded="false">
+                        <img src="{% static 'img/default-profile.png' %}" alt="profile" class="profile-img me-2">
+                        <span class="fw-semibold">Admin</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#">Keluar</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!-- backdrop for mobile sidebar -->
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+        {% block content %}
+        {% endblock content %}
+
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    (function(){
+        const sidebar = document.querySelector('.sidebar');
+        const toggle = document.getElementById('sidebarToggle');
+        const closeBtn = document.getElementById('sidebarClose');
+        const backdrop = document.getElementById('sidebarBackdrop');
+
+        function openSidebar(){
+            sidebar.classList.add('open');
+            backdrop.classList.add('active');
+            document.body.classList.add('sidebar-open');
+        }
+
+        function closeSidebar(){
+            sidebar.classList.remove('open');
+            backdrop.classList.remove('active');
+            document.body.classList.remove('sidebar-open');
+        }
+
+        if(toggle){
+            toggle.addEventListener('click', function(e){
+                e.stopPropagation();
+                if(sidebar.classList.contains('open')) closeSidebar(); else openSidebar();
+            });
+        }
+
+        if(closeBtn){
+            closeBtn.addEventListener('click', function(e){
+                e.stopPropagation();
+                closeSidebar();
+            });
+        }
+
+        if(backdrop){
+            backdrop.addEventListener('click', closeSidebar);
+        }
+
+        // close when pressing ESC
+        document.addEventListener('keydown', function(e){
+            if(e.key === 'Escape') closeSidebar();
+        });
+
+    })();
+</script>
+
+<script>
+    // Re-initialize Bootstrap dropdowns to use Popper 'fixed' strategy
+    (function(){
+        if(typeof bootstrap === 'undefined') return;
+        const toggles = document.querySelectorAll('[data-bs-toggle="dropdown"]');
+        toggles.forEach(function(toggle){
+            try{
+                // re-create dropdown with popperConfig strategy fixed and boundary body
+                new bootstrap.Dropdown(toggle, {
+                    popperConfig: function(defaultBsPopperConfig) {
+                        return Object.assign({}, defaultBsPopperConfig, {
+                            strategy: 'fixed',
+                            modifiers: [
+                                { name: 'preventOverflow', options: { boundary: document.body } },
+                                { name: 'flip', options: { boundary: document.body } }
+                            ]
+                        });
+                    }
+                });
+            }catch(e){
+                // ignore
+            }
+        });
+    })();
+
+    // Append dropdown menus to body on show to avoid clipping by other stacking contexts
+    (function(){
+        if(typeof bootstrap === 'undefined') return;
+        const dropdownParents = document.querySelectorAll('.dropdown');
+        dropdownParents.forEach(function(parent){
+            const menu = parent.querySelector('.dropdown-menu');
+            if(!menu) return;
+
+            parent.addEventListener('show.bs.dropdown', function(){
+                // move menu to body
+                if(!menu.__moved){
+                    parent.__menuPlaceholder = document.createComment('dropdown-placeholder');
+                    parent.insertBefore(parent.__menuPlaceholder, menu);
+                    document.body.appendChild(menu);
+                    menu.__moved = true;
+                }
+            });
+
+            parent.addEventListener('hidden.bs.dropdown', function(){
+                // move menu back to original place
+                if(menu.__moved){
+                    if(parent.__menuPlaceholder){
+                        parent.insertBefore(menu, parent.__menuPlaceholder);
+                        parent.removeChild(parent.__menuPlaceholder);
+                        parent.__menuPlaceholder = null;
+                    } else {
+                        parent.appendChild(menu);
+                    }
+                    menu.__moved = false;
+                }
+            });
+        });
+    })();
+</script>
+
+</body>
+</html>

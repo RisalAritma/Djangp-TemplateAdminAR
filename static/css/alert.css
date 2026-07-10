@@ -1,0 +1,109 @@
+/* =========================================
+   GLOBAL ALERT / NOTIFICATION
+========================================= */
+
+.alert2-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
+}
+
+.alert2 {
+    pointer-events: auto;
+    position: relative;
+    min-width: 300px;
+    max-width: 380px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
+    animation: slideInAlert 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* PROGRESS LINE */
+
+.alert2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+    animation: alert2Progress 4s linear forwards;
+}
+
+/* ALERT COLORS */
+
+.alert2-success {
+    background-color: #10b981;
+}
+
+.alert2-danger,
+.alert2-error {
+    background-color: #e31e24;
+}
+
+.alert2-warning {
+    background-color: #f59e0b;
+}
+
+.alert2-info {
+    background-color: #3b82f6;
+}
+
+/* ANIMATION */
+
+@keyframes slideInAlert {
+
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes alert2Progress {
+
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+
+    .alert2-container {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+
+    .alert2 {
+        width: 100%;
+        min-width: auto;
+        max-width: 100%;
+    }
+
+}
