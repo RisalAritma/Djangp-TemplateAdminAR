@@ -16,6 +16,8 @@
 
     --text-light:#6b7280;
 
+    --text-dark:#111827;
+
     --border:#ececec;
 
     --shadow:0 8px 30px rgba(0,0,0,.06);
@@ -128,6 +130,11 @@ Sidebar
 
 }
 
+.logo > div:first-child {
+    /* Membuat div pembungkus judul mengambil sisa ruang */
+    flex-grow: 1;
+}
+
 .logo h4{
 
     margin:0;
@@ -143,17 +150,32 @@ Sidebar
 }
 
 .app-title{
-    margin:0;
-    font-weight:800;
-    color:var(--primary);
-    letter-spacing:1px;
+    font-size: 1.6rem; /* Ukuran font diperbesar agar lebih menonjol */
+    font-weight: 800;
+    margin: 0;
+    
+    /* Efek Gradasi Warna Animasi pada Teks */
+    background: linear-gradient(45deg, var(--primary), #490b0b);
+    background-size: 200% auto; /* Perbesar ukuran background untuk animasi */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center; /* Memusatkan teks judul */
+    animation: shine 5s linear infinite; /* Terapkan animasi */
 }
 
 .sidebar-footer{
     /* keep footer at bottom of sidebar regardless of menu scroll */
     margin-top:auto;
-    padding-left:20px;
-    padding-right:20px;
+    padding: 15px 20px 0; /* Tambahkan padding atas */
+    border-top: 1px solid var(--border); /* Tambahkan garis pemisah */
+}
+
+/* Keyframes untuk animasi gradasi pada judul */
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }
 
 
@@ -185,13 +207,13 @@ Menu
 
     align-items:center;
 
-    gap:15px;
+    gap:10px; /* Jarak ikon dan teks diperkecil */
 
-    padding:14px 18px;
+    padding:10px 14px; /* Padding (ketebalan) diperkecil */
 
-    margin-bottom:10px;
+    margin-bottom:6px; /* Jarak antar menu diperkecil */
 
-    border-radius:14px;
+    border-radius:10px; /* Sudut kotak dibuat lebih tajam */
 
     cursor:pointer;
 
@@ -199,11 +221,43 @@ Menu
 
     font-weight:500;
 
+    font-size:0.9rem; /* Ukuran font menu utama dikecilkan */
+
 }
 
 .menu li i{
 
     font-size:20px;
+
+}
+
+.menu-title{
+
+    padding:0 18px 6px;
+
+    margin-top:15px;
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.12em;
+
+    color:var(--text-light);
+
+}
+
+.menu-divider{
+
+    height:1px;
+
+    background:var(--border);
+
+    margin:8px 18px 14px;
+
+    border:0;
 
 }
 
@@ -600,4 +654,81 @@ Responsive
 }
 .dropup .dropdown-menu{
     margin-bottom:6px;
+}
+
+/* ======================================
+   COLLAPSE MENU
+======================================*/
+
+/*
+  Ini adalah perbaikan kunci.
+  Kita menargetkan li.menu-dropdown secara spesifik untuk mengubah arah flex-nya menjadi vertikal.
+*/
+.menu li.menu-dropdown {
+    flex-direction: column; /* Mengubah dari baris (default) menjadi kolom */
+    padding: 0; /* Menghapus padding agar tombol dan submenu bisa full-width */
+}
+
+.menu-toggle{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border:none;
+    background:none;
+    padding:10px 14px; /* Disesuaikan agar sama dengan menu lain */
+    border-radius:10px; /* Disesuaikan agar sama dengan menu lain */
+    cursor:pointer;
+    transition:.3s;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.menu-toggle:hover{
+    background:#f8f9fa;
+    color:var(--primary);
+}
+
+.menu-toggle span{
+    display:flex;
+    align-items:center;
+    gap: 15px;
+}
+
+.menu-arrow{
+    transition:.3s;
+}
+
+/* Style saat dropdown terbuka */
+.menu-toggle[aria-expanded="true"]{
+    background:var(--primary-light);
+    color:var(--primary);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-arrow{
+    transform:rotate(180deg);
+}
+
+.submenu{
+    list-style: none;
+    padding: 2px 0 4px 12px; /* Padding kiri submenu diperkecil */
+    margin: 4px 0 4px 12px;   /* Margin kiri submenu diperkecil */
+    border-left:1px solid var(--border); /* Garis dibuat lebih tipis */
+}
+
+.submenu a{
+    text-decoration:none;
+    color:var(--text-light); /* Warna dibuat sedikit lebih terang */
+    padding:7px 10px;      /* Padding (ketebalan) submenu diperkecil */
+    border-radius:8px;     /* Sudut kotak submenu dibuat lebih tajam */
+    transition:.3s;
+    display: block;
+    font-size: 0.85rem;    /* Ukuran font submenu dikecilkan */
+    font-weight: 500;
+}
+
+.submenu a:hover{
+    background:#f3f4f6;
+    color:var(--text-dark);
+    padding-left:18px;
 }

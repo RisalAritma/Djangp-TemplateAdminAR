@@ -1,0 +1,445 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<div class="card shadow-sm border-0">
+
+    <div class="card-header bg-white">
+
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+            <div>
+
+                <h4 class="fw-bold mb-1">
+                    Data Pegawai
+                </h4>
+
+                <small class="text-muted">
+                    Contoh penggunaan DataTables Bootstrap 5.
+                </small>
+
+            </div>
+
+            <button
+                class="btn btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#modalTambah">
+
+                <i class="bi bi-plus-circle"></i>
+
+                Tambah Data
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+
+            <table
+                id="datatable"
+                class="table table-bordered table-hover align-middle">
+
+                <thead class="table-danger">
+
+                    <tr>
+
+                        <th width="60">No</th>
+
+                        <th>Nama</th>
+
+                        <th>NIDN</th>
+
+                        <th>Program Studi</th>
+
+                        <th>Email</th>
+
+                        <th>Status</th>
+
+                        <th width="120">Aksi</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>1</td>
+
+                        <td>Ahmad Fauzi</td>
+
+                        <td>0123456789</td>
+
+                        <td>Teknik Informatika</td>
+
+                        <td>ahmad@kampus.ac.id</td>
+
+                        <td>
+
+                            <span class="badge bg-success">
+                                Aktif
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="btn btn-sm btn-warning">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-danger">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2</td>
+
+                        <td>Siti Rahma</td>
+
+                        <td>1123456789</td>
+
+                        <td>Sistem Informasi</td>
+
+                        <td>siti@kampus.ac.id</td>
+
+                        <td>
+
+                            <span class="badge bg-success">
+                                Aktif
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="btn btn-sm btn-warning">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-danger">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>3</td>
+
+                        <td>Budi Santoso</td>
+
+                        <td>2123456789</td>
+
+                        <td>Teknik Elektro</td>
+
+                        <td>budi@kampus.ac.id</td>
+
+                        <td>
+
+                            <span class="badge bg-warning text-dark">
+                                Cuti
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="btn btn-sm btn-warning">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-danger">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>4</td>
+
+                        <td>Dewi Lestari</td>
+
+                        <td>3123456789</td>
+
+                        <td>Teknik Mesin</td>
+
+                        <td>dewi@kampus.ac.id</td>
+
+                        <td>
+
+                            <span class="badge bg-success">
+                                Aktif
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="btn btn-sm btn-warning">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-danger">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>5</td>
+
+                        <td>Rudi Hartono</td>
+
+                        <td>4123456789</td>
+
+                        <td>Teknik Sipil</td>
+
+                        <td>rudi@kampus.ac.id</td>
+
+                        <td>
+
+                            <span class="badge bg-danger">
+                                Nonaktif
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="btn btn-sm btn-warning">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm btn-danger">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =======================================================
+        MODAL TAMBAH DATA
+======================================================= -->
+
+<div
+    class="modal fade"
+    id="modalTambah"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content border-0 shadow">
+
+            <div class="modal-header bg-danger text-white">
+
+                <h5 class="modal-title">
+
+                    <i class="bi bi-person-plus-fill me-2"></i>
+
+                    Tambah Data Pegawai
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <form method="post">
+
+                {% csrf_token %}
+
+                <div class="modal-body">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+
+                                Nama Lengkap
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Masukkan nama lengkap">
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+
+                                NIDN
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Masukkan NIDN">
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+
+                                Program Studi
+
+                            </label>
+
+                            <select class="form-select">
+
+                                <option>Teknik Informatika</option>
+                                <option>Sistem Informasi</option>
+                                <option>Teknik Elektro</option>
+                                <option>Teknik Mesin</option>
+                                <option>Teknik Sipil</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+
+                                Status
+
+                            </label>
+
+                            <select class="form-select">
+
+                                <option>Aktif</option>
+                                <option>Cuti</option>
+                                <option>Nonaktif</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-12 mb-3">
+
+                            <label class="form-label">
+
+                                Email
+
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                placeholder="email@kampus.ac.id">
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label class="form-label">
+
+                                Alamat
+
+                            </label>
+
+                            <textarea
+                                rows="4"
+                                class="form-control"
+                                placeholder="Masukkan alamat lengkap"></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                        <i class="bi bi-x-circle"></i>
+
+                        Batal
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-danger">
+
+                        <i class="bi bi-check-circle"></i>
+
+                        Simpan Data
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,642 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <h4 class="fw-bold mb-2">Contoh Penggunaan Bootstrap Icons (BI)</h4>
+            <p class="text-muted mb-4">
+                Gunakan class <code>bi bi-nama-icon</code> pada elemen <code>&lt;i&gt;</code> atau <code>&lt;span&gt;</code>.
+            </p>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-3">
+                    <div class="border rounded p-3 text-center">
+                        <i class="bi bi-house fs-3"></i>
+                        <div class="mt-2 small fw-semibold">bi-house</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="border rounded p-3 text-center">
+                        <i class="bi bi-bell fs-3"></i>
+                        <div class="mt-2 small fw-semibold">bi-bell</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="border rounded p-3 text-center">
+                        <i class="bi bi-search fs-3"></i>
+                        <div class="mt-2 small fw-semibold">bi-search</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="border rounded p-3 text-center">
+                        <i class="bi bi-gear fs-3"></i>
+                        <div class="mt-2 small fw-semibold">bi-gear</div>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="fw-semibold mb-3">Contoh tombol dengan icon</h5>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+                <button class="btn btn-primary">
+                    <i class="bi bi-plus-circle me-2"></i>Tambah
+                </button>
+                <button class="btn btn-success">
+                    <i class="bi bi-check-circle me-2"></i>Setujui
+                </button>
+                <button class="btn btn-warning text-dark">
+                    <i class="bi bi-exclamation-triangle me-2"></i>Perhatian
+                </button>
+                <button class="btn btn-danger">
+                    <i class="bi bi-trash me-2"></i>Hapus
+                </button>
+            </div>
+
+            <h5 class="fw-semibold mb-3">Daftar contoh icon dan nama icon</h5>
+            <div class="row g-3">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-house"></i>
+                        <span class="small">bi-house</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-bell"></i>
+                        <span class="small">bi-bell</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-search"></i>
+                        <span class="small">bi-search</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-gear"></i>
+                        <span class="small">bi-gear</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-person"></i>
+                        <span class="small">bi-person</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-people"></i>
+                        <span class="small">bi-people</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-heart"></i>
+                        <span class="small">bi-heart</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-star"></i>
+                        <span class="small">bi-star</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-check-circle"></i>
+                        <span class="small">bi-check-circle</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-x-circle"></i>
+                        <span class="small">bi-x-circle</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-pencil-square"></i>
+                        <span class="small">bi-pencil-square</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-trash"></i>
+                        <span class="small">bi-trash</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-save"></i>
+                        <span class="small">bi-save</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-cloud-arrow-up"></i>
+                        <span class="small">bi-cloud-arrow-up</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-download"></i>
+                        <span class="small">bi-download</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-upload"></i>
+                        <span class="small">bi-upload</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-envelope"></i>
+                        <span class="small">bi-envelope</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-phone"></i>
+                        <span class="small">bi-phone</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-calendar"></i>
+                        <span class="small">bi-calendar</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-map"></i>
+                        <span class="small">bi-map</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-cart"></i>
+                        <span class="small">bi-cart</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-shop"></i>
+                        <span class="small">bi-shop</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-list"></i>
+                        <span class="small">bi-list</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-grid"></i>
+                        <span class="small">bi-grid</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-table"></i>
+                        <span class="small">bi-table</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-copy"></i>
+                        <span class="small">bi-copy</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-printer"></i>
+                        <span class="small">bi-printer</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-arrow-left"></i>
+                        <span class="small">bi-arrow-left</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-arrow-right"></i>
+                        <span class="small">bi-arrow-right</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-arrow-up"></i>
+                        <span class="small">bi-arrow-up</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="border rounded p-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-arrow-down"></i>
+                        <span class="small">bi-arrow-down</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr class="my-5">
+
+<h4 class="fw-bold mb-4">
+    <i class="bi bi-grid-3x3-gap me-2"></i>
+    Contoh Icon Bootstrap Lainnya
+</h4>
+
+<div class="row g-3">
+
+    <!-- Dashboard -->
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-speedometer2 fs-2"></i>
+            <div class="small mt-2">bi-speedometer2</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-bar-chart fs-2"></i>
+            <div class="small mt-2">bi-bar-chart</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-pie-chart fs-2"></i>
+            <div class="small mt-2">bi-pie-chart</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-graph-up-arrow fs-2"></i>
+            <div class="small mt-2">bi-graph-up-arrow</div>
+        </div>
+    </div>
+
+    <!-- User -->
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-person-circle fs-2"></i>
+            <div class="small mt-2">bi-person-circle</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-person-plus fs-2"></i>
+            <div class="small mt-2">bi-person-plus</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-person-x fs-2"></i>
+            <div class="small mt-2">bi-person-x</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-person-check fs-2"></i>
+            <div class="small mt-2">bi-person-check</div>
+        </div>
+    </div>
+
+    <!-- File -->
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-file-earmark fs-2"></i>
+            <div class="small mt-2">bi-file-earmark</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-file-earmark-pdf fs-2 text-danger"></i>
+            <div class="small mt-2">bi-file-earmark-pdf</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-file-earmark-excel fs-2 text-success"></i>
+            <div class="small mt-2">bi-file-earmark-excel</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-file-earmark-word fs-2 text-primary"></i>
+            <div class="small mt-2">bi-file-earmark-word</div>
+        </div>
+    </div>
+
+    <!-- CRUD -->
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-plus-square fs-2"></i>
+            <div class="small mt-2">bi-plus-square</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-pencil fs-2"></i>
+            <div class="small mt-2">bi-pencil</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-eye fs-2"></i>
+            <div class="small mt-2">bi-eye</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-eye-slash fs-2"></i>
+            <div class="small mt-2">bi-eye-slash</div>
+        </div>
+    </div>
+
+    <!-- Security -->
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-shield-lock fs-2"></i>
+            <div class="small mt-2">bi-shield-lock</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-lock fs-2"></i>
+            <div class="small mt-2">bi-lock</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-unlock fs-2"></i>
+            <div class="small mt-2">bi-unlock</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-key fs-2"></i>
+            <div class="small mt-2">bi-key</div>
+        </div>
+    </div>
+
+    <!-- Finance -->
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-cash-stack fs-2"></i>
+            <div class="small mt-2">bi-cash-stack</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-wallet2 fs-2"></i>
+            <div class="small mt-2">bi-wallet2</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-credit-card fs-2"></i>
+            <div class="small mt-2">bi-credit-card</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-bank fs-2"></i>
+            <div class="small mt-2">bi-bank</div>
+        </div>
+    </div>
+
+    <!-- IoT -->
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-cpu fs-2"></i>
+            <div class="small mt-2">bi-cpu</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-hdd-network fs-2"></i>
+            <div class="small mt-2">bi-hdd-network</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-wifi fs-2"></i>
+            <div class="small mt-2">bi-wifi</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-bluetooth fs-2"></i>
+            <div class="small mt-2">bi-bluetooth</div>
+        </div>
+    </div>
+
+    <!-- Misc -->
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-camera fs-2"></i>
+            <div class="small mt-2">bi-camera</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-image fs-2"></i>
+            <div class="small mt-2">bi-image</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-chat-dots fs-2"></i>
+            <div class="small mt-2">bi-chat-dots</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-globe fs-2"></i>
+            <div class="small mt-2">bi-globe</div>
+        </div>
+    </div>
+
+</div>
+
+
+<h5 class="fw-semibold mb-3">Icon Persuratan</h5>
+
+<div class="row g-3">
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-envelope fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-envelope</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-envelope-open fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-envelope-open</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-send fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-send</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-mailbox fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-mailbox</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-file-earmark fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-file-earmark</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-file-earmark-text fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-file-earmark-text</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-file-earmark-richtext fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-file-earmark-richtext</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-files fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-files</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-folder fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-folder</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-folder2-open fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-folder2-open</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-archive fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-archive</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-archive-fill fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-archive-fill</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-pencil-square fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-pencil-square</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-vector-pen fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-vector-pen</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-patch-check fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-patch-check</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-printer fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-printer</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-download fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-download</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-upload fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-upload</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-search fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-search</div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="border rounded p-3 text-center">
+            <i class="bi bi-clock-history fs-2"></i>
+            <div class="mt-2 small fw-semibold">bi-clock-history</div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

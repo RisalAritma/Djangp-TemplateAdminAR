@@ -53,3 +53,24 @@ def button(request):
         'title': 'Button',
     }
     return render(request, 'app/button.html', context)   
+
+@login_required
+def table(request):
+    user = request.user
+    
+    context = {
+        'user': user,
+        'title': 'Table',
+    }
+    return render(request, 'app/table.html', context)   
+
+
+@login_required
+def icon(request):
+    user = request.user
+    
+    context = {
+        'user': user,
+        'title': 'Icon',
+    }
+    return render(request, 'app/icon.html', context)   

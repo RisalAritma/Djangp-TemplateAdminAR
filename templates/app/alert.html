@@ -31,39 +31,7 @@
 </form>
 
 
-<div class="alert2-container">
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert2 alert2-{{ message.tags }}">
-                    <i class="{% if message.tags == 'success' %}ri-checkbox-circle-line{% else %}ri-error-warning-line{% endif %}"></i>
-                    {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
 
-    {% if form.errors %}
-        <div class="alert2 alert2-error">
-                <i class="ri-error-warning-line"></i>
-                Username atau password salah!
-        </div>
-    {% endif %}
-</div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Jalankan fungsi penghilang otomatis untuk semua alert2
-        function autoRemove() {
-            const alerts = document.querySelectorAll('.alert2');
-            alerts.forEach(function(alert) {
-                setTimeout(function() {
-                    alert.classList.add('fade-out');
-                    setTimeout(() => alert.remove(), 500);
-                }, 4000);
-            });
-        }
-        autoRemove();
-    });
-</script>
 
 
 {% endblock %}
