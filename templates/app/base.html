@@ -167,7 +167,7 @@
 
             <div class="d-flex align-items-center gap-3">
                 <!-- Mobile menu toggle -->
-                <button class="btn btn-light d-lg-none me-2" id="sidebarToggle" aria-label="Buka menu">
+                <button class="btn btn-light d-xl-none me-2" id="sidebarToggle" aria-label="Buka menu">
                     <i class="bi bi-list"></i>
                 </button>
 
@@ -191,8 +191,9 @@
                 <!-- Profile dropdown -->
                 <div class="dropup dropdown">
                     <a class="d-flex align-items-center text-decoration-none" href="#" id="profileDropdown" data-bs-toggle="dropdown" data-bs-boundary="viewport" aria-expanded="false">
-                        <img src="{% static 'images/profile.png' %}" alt="profile" class="profile-img me-2">
-                        <span class="fw-semibold">Admin</span>
+                        {% comment %} <img src="{% static 'images/profile.png' %}" alt="profile" class="profile-img me-2"> {% endcomment %}
+                        <div class="profile-avatar me-2">{{ user.first_name|first }}</div>
+                        <span class="fw-semibold">{{ user.first_name }}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                         <li><a class="dropdown-item" href="#">Profile</a></li>

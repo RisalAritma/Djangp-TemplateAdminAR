@@ -561,7 +561,7 @@ Responsive
 
 
 
-@media(max-width:768px){
+@media(max-width:992px){
 
     /* off-canvas sidebar for mobile */
     .sidebar{
@@ -580,6 +580,17 @@ Responsive
 
     .sidebar.open{
         transform:translateX(0);
+    }
+
+    /* Saat sidebar terbuka di mobile, tampilkan kembali teks menu */
+    .sidebar.open .logo h4,
+    .sidebar.open .logo small,
+    .sidebar.open .menu li span{
+        display: block;
+    }
+
+    .sidebar.open .menu li{
+        justify-content: flex-start; /* Rata kiri untuk item menu */
     }
 
     .sidebar .sidebar-close{
@@ -642,6 +653,20 @@ Responsive
     border-radius:50%;
     object-fit:cover;
     border:2px solid #fff;
+}
+
+.profile-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--bs-primary);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 
 /* ensure dropdowns appear above other elements and open upward cleanly */
